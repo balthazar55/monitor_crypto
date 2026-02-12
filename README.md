@@ -2,6 +2,20 @@
 
 Este proyecto fue generado usando [Angular CLI](https://github.com/angular/angular-cli) versión 21.1.2.
 
+## hecho por los estudiantes:
+
+Fernando Marcano, C.I. V.- 29.752.386
+Yhusleika Molina, C.I. V.- 27.401.354
+Di mauro Vergara, C.I. V.- 26.498.909
+
+
+## hecho por los estudiantes:
+
+Fernando Marcano, C.I. V.- 29.752.386
+Yhusleika Molina, C.I. V.- 27.401.354
+Di mauro Vergara, C.I. V.- 26.498.909
+
+
 ## Servidor de desarrollo
 
 Para iniciar un servidor de desarrollo local, ejecuta:
