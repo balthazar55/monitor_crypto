@@ -1,0 +1,56 @@
+<div class="dashboard-container">
+    <header>
+        <h1>Monitor Crypto - Equipo Grimm - Datos Simulados (200ms)</h1>
+        <a routerLink="/" class="switch-btn">
+            Cambiar a Vista Binance
+        </a>
+    </header>
+
+    <!-- Stats Panel -->
+    <section class="stats-panel" *ngIf="marketStats() as stats">
+        <div class="stat-item">
+            <span class="label">Promedio:</span>
+            <span class="value">{{ stats.avg | currency:'USD':'symbol':'1.0-2' }}</span>
+        </div>
+        <div class="stat-item">
+            <span class="label">Volatilidad Máx:</span>
+            <span class="value">{{ stats.maxVol | number:'1.2-4' }}%</span>
+        </div>
+        <div class="stat-item">
+            <span class="label">Desviación:</span>
+            <span class="value">{{ stats.vol | number:'1.2-4' }}</span>
+        </div>
+        <div class="stat-item update-indicator">
+            <span class="pulse"></span>
+            <span class="label">200ms</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Sección 1: Todos los Activos -->
+        <section>
+            <h2>Todos los Activos</h2>
+            <div class="grid">
+                @for (asset of rawPrices(); track asset.id) {
+                <app-exercise-crypto-card [asset]="asset">
+                </app-exercise-crypto-card>
+                }
+            </div>
+        </section>
+
+        <!-- Sección 2: Top Gainers -->
+        <section class="top-gainers-section">
+            <h2>Top cambios (cambio > 5%)</h2>
+            <div class="grid">
+                @for (asset of topGainers(); track asset.id) {
+                <app-exercise-crypto-card [asset]="asset">
+                </app-exercise-crypto-card>
+                } @empty {
+                <p class="empty-state">
+                    Esperando activos con cambio > 5%...
+                </p>
+                }
+            </div>
+        </section>
+    </main>
+</div>

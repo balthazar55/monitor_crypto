@@ -1,0 +1,177 @@
+.card {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card.high-value {
+    border-color: gold;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+/* Header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.asset-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.symbol {
+    font-size: 0.7rem;
+    color: #888;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 2px;
+}
+
+.change-badge {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.change-badge.positive {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+.change-badge.negative {
+    background: rgba(248, 113, 113, 0.2);
+    color: #f87171;
+}
+
+/* Threshold */
+.threshold-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+}
+
+.threshold-label {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.threshold-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    width: 80px;
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
+    text-align: right;
+}
+
+.threshold-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.threshold-input::placeholder {
+    color: #555;
+}
+
+/* Price */
+.price-display {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: -0.5px;
+}
+
+.price-display.positive {
+    color: #4ade80;
+}
+
+.price-display.negative {
+    color: #f87171;
+}
+
+/* Sparkline */
+.sparkline-container {
+    width: 100%;
+    height: 40px;
+    margin: 0.25rem 0;
+}
+
+.sparkline-container canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat {
+    display: flex;
+    gap: 0.25rem;
+    align-items: baseline;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.stat-value {
+    font-size: 0.8rem;
+    color: #aaa;
+    font-family: 'Roboto Mono', monospace;
+}

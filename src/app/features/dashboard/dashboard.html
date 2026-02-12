@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+    <header>
+        <h1>Monitor Crypto - Equipo Grimm - Datos Reales
+        </h1>
+        <a routerLink="/exercise" class="switch-btn">
+            Cambiar a Vista Datos Simulados
+        </a>
+    </header>
+
+    <section class="stats-panel" *ngIf="marketStats() as stats">
+        <div class="stat-item">
+            <span class="label">Promedio Mercado:</span>
+            <span class="value">{{ stats.avg | currency:'USD':'symbol':'1.0-0' }}</span>
+        </div>
+        <div class="stat-item">
+            <span class="label">Volatilidad Máx:</span>
+            <span class="value">{{ stats.maxVol | number:'1.2-4' }}%</span>
+        </div>
+        <div class="stat-item">
+            <span class="label">Desviación Est:</span>
+            <span class="value">{{ stats.vol | number:'1.2-4' }}</span>
+        </div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="chart-section" *ngIf="selectedAsset() as asset">
+        <div class="chart-header">
+            <h2>Análisis de {{ asset.name }}</h2>
+            <button class="close-btn" (click)="selectedAsset.set(null)">×</button>
+        </div>
+        <app-candlestick-chart [coinId]="asset.id"></app-candlestick-chart>
+    </section>
+
+    <main>
+        <section>
+            <h2>Todos los Activos (Clic para ver gráfico)</h2>
+            <div class="grid">
+                @for (asset of rawPrices(); track asset.id) {
+                <app-crypto-card [asset]="asset" (click)="selectAsset(asset)" class="clickable"></app-crypto-card>
+                }
+            </div>
+        </section>
+
+        <section class="filtered-section">
+            <h2>top cambios (Cambio > 0.5%)</h2>
+            <div class="grid">
+                @for (asset of filteredAssets(); track asset.id) {
+                <app-crypto-card [asset]="asset" (click)="selectAsset(asset)" class="clickable"></app-crypto-card>
+                } @empty {
+                <p class="empty-state">No se detectaron movimientos significativos.</p>
+                }
+            </div>
+        </section>
+    </main>
+</div>

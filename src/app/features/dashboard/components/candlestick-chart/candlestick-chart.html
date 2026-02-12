@@ -1,0 +1,9 @@
+<div class="chart-controls">
+    <button [class.active]="activeTimeframe() === '1h'" (click)="setTimeframe('1h')">1H</button>
+    <button [class.active]="activeTimeframe() === '1d'" (click)="setTimeframe('1d')">1D</button>
+    <button [class.active]="activeTimeframe() === '1w'" (click)="setTimeframe('1w')">1W</button>
+</div>
+<div id="chart">
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis" [title]="chartOptions.title" [theme]="chartOptions.theme"></apx-chart>
+</div>

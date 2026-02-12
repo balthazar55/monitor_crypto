@@ -1,0 +1,47 @@
+<div class="card" [class.high-value]="isAboveThreshold()" [appHighlightChange]="asset().price">
+
+  <!-- Header: Icon + Name + Symbol + Change -->
+  <div class="card-header">
+    <div class="asset-info">
+      <div class="icon" [style.background]="iconBgColor()">
+        <span>{{ iconUrl() }}</span>
+      </div>
+      <div class="name-group">
+        <span class="name">{{ asset().name }}</span>
+        <span class="symbol">{{ asset().symbol }}</span>
+      </div>
+    </div>
+    <div class="change-badge" [class.positive]="isPositiveChange()" [class.negative]="!isPositiveChange()">
+      {{ isPositiveChange() ? '+' : '' }}{{ asset().change24h | number:'1.2-3' }}%
+    </div>
+  </div>
+
+  <!-- Threshold Input (individual) -->
+  <div class="threshold-row">
+    <label class="threshold-label">UMBRAL ($)</label>
+    <input type="number" class="threshold-input" [value]="threshold()" (input)="updateThreshold($event)"
+      (click)="$event.stopPropagation()" placeholder="0">
+  </div>
+
+  <!-- Price Display -->
+  <div class="price-display" [class.positive]="isPositiveChange()" [class.negative]="!isPositiveChange()">
+    {{ asset().price | number:'1.2-2' }}
+  </div>
+
+  <!-- Sparkline Chart -->
+  <div class="sparkline-container">
+    <canvas #sparklineCanvas width="200" height="40"></canvas>
+  </div>
+
+  <!-- Footer: MA and Volume -->
+  <div class="card-footer">
+    <div class="stat">
+      <span class="stat-label">MA(50):</span>
+      <span class="stat-value">{{ asset().ma50 | number:'1.2-2' }}</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">Vol:</span>
+      <span class="stat-value">{{ asset().volume | number:'1.4-4' }}</span>
+    </div>
+  </div>
+</div>
