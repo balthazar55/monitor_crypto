@@ -2,19 +2,11 @@
 
 Este proyecto fue generado usando [Angular CLI](https://github.com/angular/angular-cli) versión 21.1.2.
 
-## hecho por los estudiantes:
+## Hecho por los estudiantes
 
-Fernando Marcano, C.I. V.- 29.752.386
-Yhusleika Molina, C.I. V.- 27.401.354
-Di mauro Vergara, C.I. V.- 26.498.909
-
-
-## hecho por los estudiantes:
-
-Fernando Marcano, C.I. V.- 29.752.386
-Yhusleika Molina, C.I. V.- 27.401.354
-Di mauro Vergara, C.I. V.- 26.498.909
-
+Fernando Marcano — C.I. V-29.752.386
+Yhusleika Molina — C.I. V-27.401.354
+Di Mauro Vergara — C.I. V-26.498.909
 
 ## Servidor de desarrollo
 
@@ -132,6 +124,3 @@ Archivo con scripts y configuración: [prueba 232/prueba 232/package.json](prueb
 Si quieres, puedo:
 - ejecutar `npm audit fix` ahora para intentar resolver vulnerabilidades.
 - añadir una sección adicional de troubleshooting más extensa.
-
---
-Actualizado para incluir pasos claros de ejecución en Windows.
